@@ -1,0 +1,27 @@
+---
+version: "3.8"
+services:
+   centos:
+     image: centos
+   nginx:
+     image: nginx
+     ports: 
+       - 5055:80
+     links:
+       - centos
+   wordpress:
+     image: wordpress
+     ports:
+       - 5056:80
+     links:
+       - centos
+       - nginx
+   ubuntu:
+     image: ubuntu
+   busybox:
+     image: busybox
+   mariadb:
+     image: mariadb
+     environment:
+       MARIADB_ROOT_PASSWORD: sagar1
+...

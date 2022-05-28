@@ -1,0 +1,12 @@
+FROM ubuntu
+MAINTAINER sagar
+RUN useradd ramu
+RUN apt-get update -y
+RUN apt-get install git -y
+RUN apt-get install maven -y
+RUN apt-get install tree -y
+RUN apt-get install tomcat9 -y
+ADD https://get.jenkins.io/war-stable/2.332.3/jenkins.war /tmp
+USER ramu
+COPY cicd.yaml /tmp
+

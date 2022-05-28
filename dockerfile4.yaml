@@ -1,0 +1,7 @@
+FROM jenkins/jenkins
+
+USER root
+
+
+CMD ["java", "-jar", "jenkins.war"]
+

@@ -1,0 +1,18 @@
+---
+version: "3.8"
+services:
+  tomcat:
+    image: tomee
+    ports:
+      - 8888:8080
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          - node.hostname == manager
+      resources:
+        limits:
+          memory: "200M"
+          cpus: "0.1"
+...
+

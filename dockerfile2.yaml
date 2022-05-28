@@ -1,0 +1,6 @@
+FROM jenkins/jenkins
+MAINTAINER SS
+VOLUME /data
+EXPOSE 7707
+USER root
+ADD https://get.jenkins.io/war-stable/2.332.3/jenkins.war /tmp

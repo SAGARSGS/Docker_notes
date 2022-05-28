@@ -1,0 +1,8 @@
+FROM ubuntu
+RUN apt update
+RUN apt install -y openjdk-8-jdk
+ADD https://get.jenkins.io/war-stable/2.332.3/jenkins.war /
+ENTRYPOINT ["java","-jar","jenkins.war"]
+EXPOSE 8080
+CMD ["date"]
+

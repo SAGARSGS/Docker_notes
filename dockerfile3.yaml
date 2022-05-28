@@ -1,0 +1,11 @@
+FROM jenkins/jenkins
+MAINTAINER sagar
+
+USER root
+RUN apt-get update -y 
+RUN apt-get install git -y 
+RUN apt-get install maven -y 
+
+ADD https://get.jenkins.io/war-stable/2.332.3/jenkins.war /
+CMD ["java","-jar","jenkins.war"]
+
